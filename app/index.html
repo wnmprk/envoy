@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,900|PT+Sans+Narrow:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>ENVOY</title>
+  </head>
+  <body>
+    <div class="navbar" id="menu">
+      <div class="navbar-content">
+        <img class="logo" src="images/envoy-main-logo.gif" alt="We Are ENVOY" />
+        <div class="navbar-links">
+          <a href="">Work</a>
+          <a href="">Services</a>
+          <a href="">Ventures</a>
+          <a href="" class="active-link">About</a>
+          <a href="">Contact</a>
+          <a href="">Blog</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+      </div>
+      <div class="social">
+        <img src="images/twitter-bird.png" alt="Tweet me" />
+        <p>Tweet. Tweet.</p>
+        <span>+</span>
+      </div>
+    </div>
+    <header>
+      <h1>THE IPHONE UNCHAINED.</h1>
+      <p>
+        Tarantino's outrageous film Django Unchained needed an equally in your face mobile experience. Bloody good awesomeness ensued.
+        <a href="">View Project</a>
+      </p>
+    </header>
+    <div class="main-content">
+      <h2>
+        An independent full service creative agency helping brave brands build businesses and be heard in a world full of noise. <span class="we-are">We are Envoy.</span>
+      </h2>
+      <hr>
+      <div class="featured">
+        <h3>Featured Work</h3>
+        <a href="">View All Work</a>
+        <hr>
+        <div class="all-featured">
+          <div class="featured-work">
+            <img src="images/featured-img.jpg" alt="" />
+            <h3 class="company-name">Boost Mobile</h3>
+            <h3 class="company-purpose">Rebrand</h3>
+            <p class="company-info">
+              Boost Mobile recognized the need to elevate and refresh its brand to speak to a broader audience. The result was an evolved logo, ...
+            </p>
+            <a href="">View Project</a>
+          </div>
+          <div class="featured-work">
+            <img src="images/featured-img-2.jpg" alt="" />
+            <h3 class="company-name">Pear Sports</h3>
+            <h3 class="company-purpose">Training Portal</h3>
+            <p class="company-info">
+              Pear Sports revolutionary training systems and fitness apps were getting lost in a crowded marketplace. Envoy rebuild the story and...
+            </p>
+            <a href="">View Project</a>
+          </div>
+          <div class="featured-work">
+            <img src="images/featured-img-3.jpg" alt="" />
+            <h3 class="company-name">5.11</h3>
+            <h3 class="company-purpose">Ultimate Training Experience</h3>
+            <p class="company-info">
+              5.11, the industry leader in tactical gear turned to Envoy to bring their "Ultimate Training Challenge" to life in the digital space...
+            </p>
+            <a href="">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="news">
+        <h3>Wire</h3>
+        <a href="">View All News</a>
+        <hr>
+        <div class="all-articles">
+          <div class="article">
+            <h2 class="article-header">
+              The Weinstein Co Lets Envoy Loose on Sin City 2
+            </h2>
+            <p class="article-date">May 1, 2013</p>
+            <a href="">Read More</a>
+          </div>
+          <div class="article">
+            <h2 class="article-header">
+              5.11 Taps Envoy as New Digital Agency
+            </h2>
+            <p class="article-date">May 1, 2013</p>
+            <a href="">Read More</a>
+          </div>
+          <div class="article">
+            <h2 class="article-header--featured">
+              Pear Breaks Ground on Ground Breaking App
+            </h2>
+            <p class="article-date">May 1, 2013</p>
+            <a href="">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Toggles navbar for smaller screen widths
+      function toggleMenu() {
+        var mobileMenu = document.getElementById('menu');
+
+        if (mobileMenu.classList.contains('opened')) {
+            mobileMenu.classList.remove('opened');
+        } else {
+            mobileMenu.classList.add('opened');
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+@import 'bourbon';
+@import 'neat';
+
+$blue: #6cd9d9;
+$breakpoint-phone: 413px;
+$breakpoint-tablet: 767px;
+$carousel-image: url('../images/slide.jpg');
+$gray01: #9f9f9f;
+$gray02: #464646;
+$gray03: #1d1d1d;
+$orange-red: #e14f3a;
+$red: #d50000;
+
+@mixin link($color) {
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  color: $color;
+  transition: 0.5s;
+
+  &:hover {
+    color: $gray01;
+  }
+
+  &:active {
+    color: $orange-red;
+  }
+}
+
+body {
+  @include margin(0);
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  @include position(absolute, 0 null null);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  height: 60px;
+  width: 100%;
+
+  img {
+    @include margin(0 25px 15px 0);
+    height: 24px;
+  }
+
+  .navbar-content {
+    display: flex;
+
+    .icon {
+      @include link(white);
+      display: none;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    align-items: flex-end;
+
+    a {
+      @include link(white);
+      @include margin(0 10px 15px 0);
+    }
+
+    .active-link {
+      color: $orange-red;
+    }
+  }
+
+  .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    background-color: $gray02;
+    width: 200px;
+
+    img {
+      @include margin(0 0 0 25px);
+      height: 18px;
+      width: 20px;
+    }
+
+    p {
+      color: $blue;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      height: 100%;
+      width: 40px;
+      background-color: $orange-red;
+      color: white;
+      font-weight: 900;
+      cursor: pointer;
+    }
+  }
+}
+
+header {
+  @include position(relative, null);
+  @include padding(0 12%);
+  background-image: $carousel-image;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  min-height: 392px;
+
+  h1 {
+    @include margin(0);
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: $red;
+    font-size: 42px;
+    width: 260px;
+    line-height: 1;
+  }
+
+  p {
+    font-size: 12px;
+    color: $gray01;
+    width: 265px;
+  }
+
+  a {
+    @include link($orange-red);
+  }
+}
+
+.main-content {
+  @include position(relative, null);
+  @include padding(60px 12% 200px);
+  background-color: $gray03;
+  color: white;
+  padding-top: 60px;
+
+  h2 {
+    font-size: 25px;
+    font-weight: 500;
+  }
+
+  h2,
+  p {
+    @include margin(0);
+  }
+
+  hr {
+    @include margin(32px 0 0);
+    background-color: $gray02;
+    color: $gray02;
+    height: 5px;
+    border: none;
+  }
+
+  .featured,
+  .news {
+    margin-top: 60px;
+  }
+
+  h3 {
+    display: inline;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 6px;
+    color: $gray01;
+  }
+
+  .we-are {
+    color: $orange-red;
+  }
+
+  a {
+    @include link($orange-red);
+  }
+
+  .company-info,
+  .article-date {
+    color: $gray01;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .featured,
+  .news {
+    hr {
+      @include margin(18px 0);
+      height: 1px;
+    }
+  }
+
+  .company-name,
+  .article-header {
+    color: white;
+  }
+
+  .company-purpose,
+  .article-header--featured {
+    color: $blue;
+  }
+
+  $all-items: (columns: 3, gutter: 12px);
+  $all-items-mobile: (columns: 1, gutter: 0, media: $breakpoint-phone);
+
+  .all-featured,
+  .all-articles {
+    @include grid-collapse($all-items-mobile);
+
+    @include grid-media($all-items-mobile) {
+      @include grid-collapse($all-items);
+      @include grid-container;
+    }
+  }
+  .featured-work,
+  .article {
+    @include grid-column(1, $all-items-mobile);
+    @include margin(null null 18px);
+
+    img {
+      width: 100%;
+      margin-bottom: 18px;
+    }
+
+    @include grid-media($all-items-mobile) {
+      @include grid-column(1, $all-items);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  header {
+    @include padding(0 4%);
+  }
+
+  .main-content {
+    @include padding(60px 4% 360px);
+  }
+
+  .navbar {
+    @include position(fixed);
+
+    .navbar-links {
+      display: block;
+    }
+
+    .navbar-content {
+      img {
+        @include position(absolute, 18px 0 0 12px);
+        @include margin(0);
+      }
+
+      a {
+        display: none;
+        letter-spacing: 2px;
+      }
+
+      .icon {
+        @include position(absolute, 6px 12px 0 null);
+        @include margin(0);
+        display: block;
+      }
+    }
+
+    .social {
+      display: none;
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      margin-top: -30px;
+    }
+    to {
+      margin-top: 0;
+    }
+  }
+
+  .opened {
+    height: 360px;
+
+    .navbar-content {
+      .icon {
+        color: $orange-red;
+      }
+
+      .navbar-links {
+        @include position(absolute, 84px  0 0 12px);
+        animation-name: slidein;
+        animation-duration: 0.5s;
+
+        a {
+          display: block;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
