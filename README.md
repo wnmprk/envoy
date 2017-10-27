@@ -5,4 +5,4 @@ To start project:
 2. `npm start`
 
 ## Preview:
-![alt tag](https://imgur.com/CKADB3X)
+![Preview](https://i.imgur.com/uesJQJf.png)
